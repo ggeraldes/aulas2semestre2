@@ -1,0 +1,57 @@
+package com.sample.rules
+ 
+import com.sample.DroolsTest.Message;
+import com.sample.Sintoma;
+ 
+rule "exantema 1"
+salience 100
+    when
+        $s1: Sintoma(sintoma == "febre")
+        $s2: Sintoma(sintoma == "manchas")
+        $s3: Sintoma(sintoma == "dores")
+        
+        $p: Paciente (idade <= 15,
+        	$s1.getIdPaciente() == id,
+        	$s2.getIdPaciente() == id,
+        	$s3.getIdPaciente() == id,
+        	diagnostico == "")
+    then
+        $p.setDiagnostico("Exante 1");
+        update($p);
+        System.out.println("O Paciente "+$p.getNome()+
+        	" foi diagnosticado com Exante 1");
+end
+
+rule "gripe"
+salience 100
+    when
+        $s1: Sintoma(sintoma == "febre")
+        $s2: Sintoma(sintoma == "dores")
+    then
+        $p.setDiagnostico("Gripe");
+        update($p);
+        System.out.println("O Paciente "+$p.getNome()+
+        	" foi diagnosticado com Gripe");
+end
+
+rule "resfriado"
+salience 100
+    when
+        $s1: Sintoma(sintoma == "febre")
+    then
+        $p.setDiagnostico("Resfriado");
+        update($p);
+        System.out.println("O Paciente "+$p.getNome()+
+        	" foi diagnosticado com Resfriado");
+end
+
+rule "resfriado"
+salience 100
+    when
+        $s1: Sintoma(sintoma == "")
+    then
+        $p:Paciente(diagnostico==””)
+ forall($s:Sintoma(idPaciente!=$p.getId()))
+        System.out.println("O Paciente "+$p.getNome()+
+        	" não tem sintomas");
+end

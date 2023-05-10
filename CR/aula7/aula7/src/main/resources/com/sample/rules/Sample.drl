@@ -1,0 +1,62 @@
+package com.sample.rules
+ 
+import com.sample.Alarme;
+import com.sample.Aspersor;
+import com.sample.Divisao;
+import com.sample.Fogo;
+
+rule "Se há fogo numa divisão, ligar aspersor de água"
+	salience 50	// prioridade 50
+	when
+		$d: Divisao()								// Analisa divisão
+		$f: Fogo(divisao==$d)						// Existe fogo na divisão
+		$a: Aspersor (divisao==$d, ligado==false)	// O aspersor está desligado
+	then
+		$a.setLigado(true);												// Liga aspersor
+		update($a);														// Atualiza estado do aspersor
+		System.out.println("Asperior ligado na divisao " + $d.getNome());	// Imprime "Asperior ligado na divisão"
+		retract($f);													// Fogo apagado
+		System.out.println("Fogo foi estinto na divisao " + $d.getNome());	// Impirme "Fogo foi estinto na divisão"
+end
+
+
+rule "Fogo apagado numa divisão, desligar aspersor"
+	salience 40 // prioridade 40
+	when
+		$d: Divisao() // Analisa divisão
+		$a: Aspersor (divisao==$d, ligado==true) // O aspersor está ligado
+		not Fogo(divisao==$d) // Não existe fogo na divisão
+	then
+		$a.setLigado(false);// Desliga aspersor
+		update($a);	// Atualiza estado do aspersor
+		System.out.println("Aspersor desligado na divisao " + $d.getNome());// Imprime "Aspersor desligado na divisão "
+end
+
+rule "Liga alarme se há fogos"
+	salience 100	// prioridade 100
+	when
+		exists Fogo() // Há fogo
+	then
+		insert(new Alarme());	// Liga alarme
+		System.out.println("Alarme ligado");
+end
+
+rule "Desliga alarme se não há fogos "
+ 	salience 10 // prioridade 10
+ 	when
+		not Fogo()		// Não há fogo
+		$a: Alarme()	// Alarme ligado
+ 	then
+		retract($a);		// Desliga alarme
+		System.out.println("Alarme desligado");
+end
+
+
+rule "Tudo OK"
+ 	salience 1 // prioridade 1
+ 	when
+		not Alarme()					// Alarme desligado
+		not Aspersor(ligado == true)	// Aspersores desligados
+ 	then
+		System.out.println("Tudo OK");
+end
