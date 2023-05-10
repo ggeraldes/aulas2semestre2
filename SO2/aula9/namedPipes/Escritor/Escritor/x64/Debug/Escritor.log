@@ -1,0 +1,2 @@
+﻿escritor.obj : error LNK2019: símbolo externo não resolvido, Release, referenciado na função wmain
+D:\isec\SO2\aula9\namedPipes\Escritor\x64\Debug\Escritor.exe : fatal error LNK1120: 1 externo não resolvidos

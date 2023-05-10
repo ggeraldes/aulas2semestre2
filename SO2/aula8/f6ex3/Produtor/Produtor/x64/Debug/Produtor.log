@@ -1,0 +1,10 @@
+﻿  produtor.c
+D:\isec\SO2\aula8\f6ex3\header.h(60,15): warning C4133: 'função': tipos incompatíveis - de 'char [1]' para 'const wchar_t *const '
+D:\isec\SO2\aula8\f6ex3\header.h(71,14): warning C4133: 'função': tipos incompatíveis - de 'char [1]' para 'const wchar_t *const '
+D:\isec\SO2\aula8\f6ex3\header.h(85,17): warning C4133: 'função': tipos incompatíveis - de 'char [3]' para 'const wchar_t *const '
+D:\isec\SO2\aula8\f6ex3\header.h(92,15): warning C4133: 'função': tipos incompatíveis - de 'char [1]' para 'const wchar_t *const '
+D:\isec\SO2\aula8\f6ex3\header.h(100,15): warning C4133: 'função': tipos incompatíveis - de 'char [1]' para 'const wchar_t *const '
+D:\isec\SO2\aula8\f6ex3\Produtor\Produtor\produtor.c(60,22): warning C4013: 'time' indefinido; assumindo extern retornando int
+D:\isec\SO2\aula8\f6ex3\Produtor\Produtor\produtor.c(76,43): warning C4047: 'função': 'const wchar_t *' difere em níveis de indireção de 'int'
+D:\isec\SO2\aula8\f6ex3\Produtor\Produtor\produtor.c(76,43): warning C4024: 'wcscmp': tipos diferentes para parâmetro formal e real 2
+  Produtor.vcxproj -> D:\isec\SO2\aula8\f6ex3\Produtor\x64\Debug\Produtor.exe
