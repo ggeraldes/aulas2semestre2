@@ -1,0 +1,3 @@
+D:/isec/P/aula5/g2/cmake-build-debug/CMakeFiles/g2.dir
+D:/isec/P/aula5/g2/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/isec/P/aula5/g2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
