@@ -1,0 +1,5 @@
+﻿  exercicios.c
+D:\isec\SO2\aula6\f5\f5\exercicios.c(145,24): warning C4018: '<=': incompatibilidade de signed/unsigned
+D:\isec\SO2\aula6\f5\f5\exercicios.c(183,15): warning C4101: 'inter': variável local não referenciada
+D:\isec\SO2\aula6\f5\f5\exercicios.c(182,15): warning C4101: 'range': variável local não referenciada
+  f5.vcxproj -> D:\isec\SO2\aula6\f5\x64\Debug\f5.exe
