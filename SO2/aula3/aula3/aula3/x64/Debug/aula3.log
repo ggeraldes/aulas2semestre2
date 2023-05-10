@@ -1,0 +1,4 @@
+﻿  aula3.cpp
+D:\isec\SO2\aula3\aula3\aula3\aula3.cpp(51,1): warning C4267: 'argumento': conversão de 'size_t' para 'DWORD', possível perda de dados
+D:\isec\SO2\aula3\aula3\aula3\aula3.cpp(11,11): warning C4101: 'chave_nome': variável local não referenciada
+  aula3.vcxproj -> D:\isec\SO2\aula3\aula3\x64\Debug\aula3.exe

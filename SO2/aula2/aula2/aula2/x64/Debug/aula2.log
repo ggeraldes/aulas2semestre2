@@ -1,0 +1,3 @@
+﻿  aula2.cpp
+D:\isec\SO2\aula2\aula2\aula2\aula2.cpp(126,21): warning C4101: 'param': variável local não referenciada
+  aula2.vcxproj -> D:\isec\SO2\aula2\aula2\x64\Debug\aula2.exe
